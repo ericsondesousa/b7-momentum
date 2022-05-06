@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    text-shadow: 0 0 3px #999;
+    color: #fff;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-rows: 1fr max-content;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+main .clock-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .clock-area .clock {
+    font-size: 80px;
+}
+
+main .clock-area .greetings {
+    font-size: 50px;
+    text-align: center;
+}
+
+main .text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    position: relative;
+    gap: 10px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+main .text-area .text {
+    font-size: 14px;
+}
+
+main .text-area .author {
+    opacity: 0;
+    transition: all ease 1s;
+    position: relative;
+    top: -1em;
+}
+
+main .text-area .author::before {
+    content: '\2014';
+    margin-right: 10px;
+}
+
+main .text-area:hover .author {
+    opacity: 1;
+    top: 0;
+}
