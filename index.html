@@ -11,23 +11,36 @@
 
 <body>
   <main>
-    <div class="clock-area">
-      <div class="clock">
-        10:27
-      </div>
-      <div class="greetings">
-        Bom dia, Fulano.
-      </div>
+    <div class="bg"></div>
+    <div class="opening">
+      <input type="text" name="user" placeholder="Qual o seu nome?">
+      <button onclick="showMain()">Salvar</button>
     </div>
-    <div class="text-area">
-      <div class="text">
-         "Pode se encontrar a felicidade mesmo nas horas mais sombrias, se a pessoa se lembrar de acender a luz."
+    <div class="content-area hidden">
+      <div class="clock-area">
+        <div class="clock">
+          <!-- dynamic content -->
+        </div>
+        <div class="greetings">
+          <span class="greeting-text">
+            <!-- dynamic content -->
+          </span>, <span class="greeting-user">
+            <!-- dynamic content -->
+          </span>
+        </div>
       </div>
-      <div class="author">
-        Fulano de tal
+      <div class="text-area">
+        <div class="text">
+          "Pode se encontrar a felicidade mesmo nas horas mais sombrias, se a pessoa se lembrar de acender a luz."
+        </div>
+        <div class="author">
+          Fulano de tal
+        </div>
       </div>
     </div>
   </main>
+
+  <script src="assets/js/script.js"></script>
 
 </body>
 

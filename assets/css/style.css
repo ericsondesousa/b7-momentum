@@ -16,32 +16,102 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../images/bg.jpg');
-    background-size: cover;
-    background-position: center;
-    display: grid;
-    grid-template-rows: 1fr max-content;
     overflow: hidden;
     padding: 0 10px;
-}
-
-main .clock-area {
+    transition: all ease 2s;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-main .clock-area .clock {
+main .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../images/bg.jpg');
+    background-size: cover;
+    background-position: center;    
+    filter: blur(6px);
+    transition: all ease 2s;
+}
+
+main .bg.without-blur { 
+    filter: blur(0);
+}
+
+.opening {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    gap: 20px;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.opening input {
+    height: 50px;
+    width: 300px;
+    padding: 10px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 3px #000;
+    outline: 0;
+    color: #555;
+}
+
+.opening button {
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4923f3;
+    color: #FFF;
+    border: none;
+    box-shadow: 0 0 3px #000;
+}
+
+.content-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+}
+
+.content-area .clock-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.content-area .clock-area .clock {
     font-size: 80px;
 }
 
-main .clock-area .greetings {
+.content-area .clock-area .greetings {
     font-size: 50px;
     text-align: center;
 }
 
-main .text-area {
+.content-area .text-area {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -53,23 +123,23 @@ main .text-area {
     padding: 20px 0;
 }
 
-main .text-area .text {
+.content-area .text-area .text {
     font-size: 14px;
 }
 
-main .text-area .author {
+.content-area .text-area .author {
     opacity: 0;
     transition: all ease 1s;
     position: relative;
     top: -1em;
 }
 
-main .text-area .author::before {
+.content-area .text-area .author::before {
     content: '\2014';
     margin-right: 10px;
 }
 
-main .text-area:hover .author {
+.content-area .text-area:hover .author {
     opacity: 1;
     top: 0;
 }
